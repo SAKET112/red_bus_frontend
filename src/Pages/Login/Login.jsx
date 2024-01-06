@@ -2,18 +2,50 @@ import "./Login.scss"
 import image from "../../assets/19199008.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+
 
 const Login = () => {
 
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [pass, setPass] = useState("")
 
-  const handleLogin = (e) => {
-    e.preventDefault();
 
+  //LOGGING IN USER
+  const handleLogin =() => {
+
+    const payload = {
+      email,
+      pass
+    }
+
+    fetch("http://localhost:8800/api/user/login", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers : {
+        "Content-type": "application/json"
+      }
+    })
+    .then(res => res.json())
+    .then(res => {
+      if(res.msg == "LoggedIn"){
+        localStorage.setItem("token", res.token)
+        navigate('/')
+        window.location.reload();
+      }else{
+        alert("Wrong Credentials")
+      }
+      
+    })
+    .catch(err => console.log(err))
     
 
   }
+
+  //redirecting to home page
+
 
   return (
     <div className="loginContainer">
@@ -26,9 +58,7 @@ const Login = () => {
 
             <label htmlFor="email">Email : 
                 <input 
-                  type="email" 
-                  name="email" 
-                  id="email" 
+                  type="email"  
                   placeholder="Enter your Email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
@@ -38,11 +68,9 @@ const Login = () => {
             <label htmlFor="pass">Password :
               <input 
                 type="password" 
-                name="pass" 
-                id="pass" 
                 placeholder="Enter Password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
+                value={pass}
+                onChange={e => setPass(e.target.value)}
               />
             </label>
 

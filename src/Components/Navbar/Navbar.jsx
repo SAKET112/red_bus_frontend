@@ -6,7 +6,15 @@ import { Link } from "react-router-dom";
 
 
 
+
 const Navbar = () => {
+
+  const verifyToken= localStorage.getItem('token')
+  console.log(verifyToken);
+  const removeToken = ()=>{
+    localStorage.clear()
+    window.location.reload();
+  }
   return (
     <div className="navbar">
         <div className="left">
@@ -40,8 +48,8 @@ const Navbar = () => {
               <span>Account</span>
               <KeyboardArrowDownOutlinedIcon />
               <div className="options">
-                <Link to='/login'><span>Login</span></Link>
-                <Link to="/register"><span>Register</span></Link>
+               {verifyToken?<Link ><span onClick={removeToken}>Logout</span></Link>:verifyToken==null? <Link to='/login'><span>Login</span></Link>:null}
+                {verifyToken? null : <Link to="/register"><span>Register</span></Link>}
               </div>
           </div>
 

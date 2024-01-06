@@ -1,21 +1,39 @@
 import { useState } from "react";
 import "./Search.scss";
 import DirectionsBusFilledOutlinedIcon from '@mui/icons-material/DirectionsBusFilledOutlined';
+import {useNavigate} from 'react-router-dom'
+
 
 
 const Search = () => {
 
+  const navigate = useNavigate();
+
   const [from, setFrom] = useState("")
   const [to, setTo] = useState("")
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = () => {
+    
+    if(from.length==0 || to.length==0){
+      alert("Please enter your Destination")
+    } else{
+      localStorage.setItem('from', from);
+      localStorage.setItem('to', to);
+      if(verifyToken) {
+        navigate('/searchedBuses')
+      } else{
+        alert("Please Login First")
+      }
+    }
+    
   }
-
+  
+  const verifyToken= localStorage.getItem('token')
+  
 
   return (
     <div className="heroSection">
-        <h1>India's No. 1 Online Bus Ticket Booking Site</h1>
+        <h1> No. 1 Online Bus Ticket Booking Site</h1>
         <div className="input">
             <label> 
                 <DirectionsBusFilledOutlinedIcon />
@@ -28,6 +46,7 @@ const Search = () => {
             <label> 
                 <input type="Date" placeholder="Date" />
             </label>
+            
             <button onClick={handleSubmit}>SEARCH BUSES</button>
         </div>
     </div>

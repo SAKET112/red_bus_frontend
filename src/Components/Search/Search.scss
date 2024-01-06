@@ -21,6 +21,7 @@
         width: 1000px;
         height: 112px;
         
+        
 
         label{
             display: flex;
@@ -38,7 +39,7 @@
                 background: none;
                 cursor: pointer;
                 font-size: 18px;
-                
+                cursor: text;  
 
                 &::placeholder{
                     font-size: 18px;
