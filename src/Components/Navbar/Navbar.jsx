@@ -3,16 +3,20 @@ import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 
 
 
 
 const Navbar = () => {
 
+  const navigate = useNavigate()
+
   const verifyToken= localStorage.getItem('token')
   console.log(verifyToken);
   const removeToken = ()=>{
     localStorage.clear()
+    navigate("/")
     window.location.reload();
   }
   return (
