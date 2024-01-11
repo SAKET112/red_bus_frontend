@@ -62,15 +62,28 @@
             font-weight: bold;
             color: #FFF;
             cursor: pointer;
+            transition: linear all 0.4s;
+
+            &:hover{
+                box-shadow: 1px 1px 10px 0px rgb(24, 23, 23);
+            }
         }
 
         .login{
             margin-left: 90px;
             color: #FFF;
+            font-weight: bolder;
+            
 
             a{
                 text-decoration: none;
                 color: #6d2222;
+                transition: linear all 0.4s;
+                
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
         }
     }

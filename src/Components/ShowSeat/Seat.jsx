@@ -50,18 +50,21 @@ const Seat = () => {
       seats: selectedSeats
     }
 
-    console.log(payload);
+    // console.log(payload);
 
-       await fetch("http://localhost:8800/api/passenger",{
+      const accessToken = localStorage.getItem('token')
+
+        fetch("http://localhost:8800/api/passenger",{
           method: "POST",
           body: JSON.stringify(payload),
           headers: {
+            Authorization: `${accessToken}`,
             "Content-type": "application/json"
           }
         })
         .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+        .then(res => console.log("submit", res))
+        .catch(err => console.log("error",err))
     // Handle submission of data (e.g., send to server)
     
     // Reset selected seats and close the sidebar
@@ -155,8 +158,9 @@ const Seat = () => {
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option>Select...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Male</option>
               
               </select>
             </label>
