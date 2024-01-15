@@ -1,0 +1,53 @@
+.global-presence{
+    margin: 4% 0;
+    position: absolute;
+    top: 515%;
+    left: 235px;
+
+    span{
+        font-size: 28px;
+        margin: 20px 0px 32px;
+        color: var(--black-color);
+        font-weight: 400;
+    }
+
+    .countries{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 40px;
+
+        .country{
+            cursor: pointer;
+            border-radius: 15px;
+            padding: 10px;
+
+            .global-countries{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                &:hover{
+                    background-color: var(--hover-color);
+                }
+
+                img{
+                    height: 120px;
+                    width: 120px;
+                    margin: 0px 0px;
+                }
+
+                div{
+                    font-size: 20px;
+                    /* padding: 10px 32px; */
+                    color: var(--black-color);
+                    font-weight: bolder;
+                    /* margin-left: 180px; */
+                }
+            }
+        }
+    }
+}
