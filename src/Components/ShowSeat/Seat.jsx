@@ -54,7 +54,7 @@ const Seat = () => {
 
       const accessToken = localStorage.getItem('token')
 
-        fetch("http://localhost:8800/api/passenger",{
+        fetch("https://tame-puce-stingray-tam.cyclic.app/api/passenger",{
           method: "POST",
           body: JSON.stringify(payload),
           headers: {

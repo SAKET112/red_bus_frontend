@@ -21,7 +21,7 @@ const Login = () => {
       pass
     }
 
-    fetch("http://localhost:8800/api/user/login", {
+    fetch("https://tame-puce-stingray-tam.cyclic.app/api/user/login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers : {

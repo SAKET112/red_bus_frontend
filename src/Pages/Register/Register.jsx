@@ -19,7 +19,7 @@ const Register = () => {
       pass
     }
 
-    fetch("http://localhost:8800/api/user/register", {
+    fetch("https://tame-puce-stingray-tam.cyclic.app/api/user/register", {
             method: "POST",
             body : JSON.stringify(payload),
             headers : {

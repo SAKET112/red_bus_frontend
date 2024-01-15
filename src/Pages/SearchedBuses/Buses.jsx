@@ -13,7 +13,7 @@ const Buses = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:8800/api/bus", {
+    fetch("https://tame-puce-stingray-tam.cyclic.app/api/bus", {
         method:"GET",
         headers: {
             "Authorization":  `${accessToken}`,
