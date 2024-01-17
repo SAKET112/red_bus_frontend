@@ -17,8 +17,8 @@ const Search = () => {
     if(from.length==0 || to.length==0){
       alert("Please enter your Destination")
     } else{
-      localStorage.setItem('from', from);
-      localStorage.setItem('to', to);
+      localStorage.setItem('from', from.toLowerCase());
+      localStorage.setItem('to', to.toLowerCase());
       if(verifyToken) {
         navigate('/searchedBuses')
       } else{
@@ -33,6 +33,7 @@ const Search = () => {
 
   return (
     <div className="heroSection">
+        {/* <img src="https://st.redbus.in/Images/HomeIndia/HeroImageV2_C.png" alt="" /> */}
         <h1> No. 1 Online Bus Ticket Booking Site</h1>
         <div className="input">
             <label> 

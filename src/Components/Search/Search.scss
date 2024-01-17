@@ -1,7 +1,9 @@
 .heroSection{
+    position: absolute;
     background-image: url("https://st.redbus.in/Images/HomeIndia/HeroImageV2_C.png");
+    background-size: cover;
     height: 624px;
-    width: 100%;
+    width: 100vw;
     margin-top: 50px;
 
     h1{

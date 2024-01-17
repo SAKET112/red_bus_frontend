@@ -6,48 +6,40 @@ import Card from "../../Components/Card/Card";
 const Buses = () => {
 
   const [buses, setBuses] = useState([])
-  const [from, setFrom] = useState('');
-  const [to, setTo] = useState('');
+  const from = localStorage.getItem('from') || ''
+  const to = localStorage.getItem('to') || ''
 
   const accessToken = localStorage.getItem('token')
 
-  useEffect(() => {
+  useEffect(()=>{
+    fetchFunction()
+  },[])
 
-    fetch("https://tame-puce-stingray-tam.cyclic.app/api/bus", {
-        method:"GET",
-        headers: {
-            "Authorization":  `${accessToken}`,
-            "Content-type": "application/json"
-        }
-    })
-    .then(res => res.json())
-    .then(res => setBuses(res))
-    .catch(err => console.log(err))
+  const fetchFunction = ()=>{
+    fetch(`http://localhost:8800/api/bus?pickup_address=${from}&&drop_address=${to}`, {
+      method:"GET",
+      headers: {
+          "Authorization":  `${accessToken}`,
+          "Content-type": "application/json"
+      }
+   })
+  .then(res => res.json())
+  .then(res => setBuses(res))
+  .catch(err => console.log(err))
+  
+}
+  console.log(buses.length);
 
-
-    const fromData = localStorage.getItem('from') || '';
-    const toData = localStorage.getItem('to') || '';
-    setFrom(fromData);
-    setTo(toData);
-
-  }, []);
-
-//   console.log(buses);   
-
-  let busFilter = buses.filter((item) => (
-    from===item.pickup_address && to===item.drop_address
-  ))
-
-//   console.log(busFilter)
 
   return (
     <div className="mainContainer">
         <h3>Buses from {from} to {to}</h3>
         <div className="card">
+             
             {
-                busFilter.length==0? <div className="noBus"> <p>No Buses Found </p> </div> : <Card data={busFilter} />
+              buses.length==0?<p>No Buses Found</p>:<Card data={buses} />
             }
-            
+          
             
         </div>
     </div>
