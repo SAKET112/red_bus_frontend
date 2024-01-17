@@ -16,7 +16,7 @@ const Buses = () => {
   },[])
 
   const fetchFunction = ()=>{
-    fetch(`http://localhost:8800/api/bus?pickup_address=${from}&&drop_address=${to}`, {
+    fetch(`https://tame-puce-stingray-tam.cyclic.app/api/bus?pickup_address=${from}&&drop_address=${to}`, {
       method:"GET",
       headers: {
           "Authorization":  `${accessToken}`,
