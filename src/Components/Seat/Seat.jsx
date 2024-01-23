@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Seat.css";
-import BusSeat from "../BusSeat/BusSeat";
+import SeatContainer from '../SeatContainer/SeatContainer';
 
 const Seat = () => {
 
@@ -94,7 +94,7 @@ const Seat = () => {
         const isSeatSelected = selectedSeats.includes(seatNumber);
 
         seats.push(
-          <BusSeat
+          <SeatContainer
             key={seatNumber}
             seatNumber={seatNumber}
             isSelected={isSeatSelected}
