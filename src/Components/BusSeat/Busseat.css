@@ -1,4 +1,3 @@
-/* BusSeat.css */
 .bus-seat {
     width: 50px;
     height: 50px;
@@ -23,4 +22,3 @@
     background-color: #f44336; /* Red for reserved seats */
     color: #fff;
 }
-  
