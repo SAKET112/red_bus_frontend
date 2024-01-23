@@ -1,0 +1,70 @@
+/* RegistrationForm.css */
+
+.registration-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    background: url('https://i.ibb.co/7XQr6M6/women-holding-smart-cards-money.jpg') center/cover no-repeat; /* Set your image URL */
+  }
+  
+  .form-container {
+    flex: 1;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.3); /* Background color with some transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    margin-top: 10%;
+    margin-left: 80px; /* Adjust as needed */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .registration-form {
+    width: 100%;
+  }
+
+  .registration-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+
+  }
+  
+  button {
+    background-color: #248827;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+
+  @media only screen and (max-width: 764px) {
+    .form-container {
+      background-color: #003566; /* Black background for smaller screens */
+      color: #fff; /* White text color for smaller screens */   
+    }
+  }

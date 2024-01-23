@@ -1,16 +1,14 @@
-import "./Navbar.scss"
-import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import './Navbar.css';
+import { RiCustomerService2Line } from "react-icons/ri";
+import { MdOutlineAccountCircle } from "react-icons/md";
 import {useNavigate} from "react-router-dom"
-
 
 
 
 const Navbar = () => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const verifyToken= localStorage.getItem('token')
   console.log(verifyToken);
@@ -19,46 +17,49 @@ const Navbar = () => {
     navigate("/")
     window.location.reload();
   }
+
+
   return (
     <div className="navbar">
-        <div className="left">
-
-          <Link to="/" ><img className="mainLogo" src="https://st.redbus.in/Images/rdc/rdc-redbus-logo.svg" alt="Logo" /></Link>
-          <div className="navMenu">
-              <div className="one">
-                <img src="https://st.redbus.in/web/images/layout/rb_vertical.svg" alt="redbus logo" />
-                <span>Bus Tickets</span>
-              </div>
-              <div className="one">
-                <img src="https://st.redbus.in/web/images/layout/ryde_vertical.svg" alt="Ryde logo" />
-                <span>Cab Rental</span>
-              </div>
-              <div className="one">
-                <img src="https://st.redbus.in/web/images/layout/rail_vertical.svg" alt=" Train logo" />
-                <span>Train Tickets</span>
-              </div>
-          </div>
-
+        <div className="leftNav">
+          <Link to="/"> <img src="https://st.redbus.in/Images/rdc/rdc-redbus-logo.svg" alt="mainLogo" /> </Link>
         </div>
-
-        <div className="right">
-
+        <div className="middleNav">
+          <Link to="/">
+              <div className="navMenu">
+                    <img src="https://st.redbus.in/web/images/layout/rb_vertical.svg" alt="redbus logo" />
+                    <span>Bus Tickets</span>
+              </div>
+          </Link>
+          <Link to="/cab">
+              <div className="navMenu">
+                    <img src="https://st.redbus.in/web/images/layout/ryde_vertical.svg" alt="Ryde logo" />
+                    <span>Cab Rental</span>
+              </div>
+          </Link>
+          <Link to="/train">
+              <div className="navMenu">
+                    <img src="https://st.redbus.in/web/images/layout/rail_vertical.svg" alt=" Train logo" />
+                    <span>Train Tickets</span>
+              </div>
+          </Link>
+        </div>
+        <div className="rightNav">
           <div className="helpSection">
-              <HeadsetMicOutlinedIcon />
+              <RiCustomerService2Line className='icon' />
               <span>Help</span>
           </div>
-          <div className="helpSection">
-              <AccountCircleOutlinedIcon />
-              <span>Account</span>
-              <KeyboardArrowDownOutlinedIcon />
+          <div className="helpSectionOne">
+              <div className="one">
+                <MdOutlineAccountCircle className='icon' />
+                <span>Account</span>
+              </div>
               <div className="options">
-               {verifyToken?<Link ><span onClick={removeToken}>Logout</span></Link>:verifyToken==null? <Link to='/login'><span>Login</span></Link>:null}
+                {verifyToken?<Link ><span onClick={removeToken}>Logout</span></Link>:verifyToken==null? <Link to='/login'><span>Login</span></Link>:null}
                 {verifyToken? null : <Link to="/register"><span>Register</span></Link>}
               </div>
           </div>
-
         </div>
-
     </div>
   )
 }

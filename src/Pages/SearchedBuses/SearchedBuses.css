@@ -1,0 +1,46 @@
+.mainContainer {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px; /* Adjust as needed based on your navbar height */
+  }
+  
+  .mainContainer h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .card {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .mainContainer {
+      padding: 10px;
+      margin-top: 220px;
+    }
+    
+    .mainContainer h3 {
+      font-size: 16px;
+    }
+  
+    .card {
+      margin-top: 10px;
+    }
+  
+    .card p {
+      font-size: 14px;
+    }
+  }

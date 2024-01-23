@@ -1,4 +1,4 @@
-import "./Rental.scss";
+import "./Rental.css";
 
 const Rental = () => {
   return (
@@ -39,7 +39,7 @@ const Rental = () => {
         <img src="https://s3.rdbuz.com/web/images/homeV2/AboutUs/aboutUsImg.svg" alt="" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Rental;
+export default Rental

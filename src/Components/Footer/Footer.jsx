@@ -1,8 +1,8 @@
-import "./Footer.scss";
+import "./Footer.css"
 
 const Footer = () => {
-  return (
-    <div className="footer">
+    return(
+        <div className="footer">
       <div className="top-footer">
         <div className="top-footer-column">
           <div className="top-footer-column-header">Top RTCs</div>
@@ -131,7 +131,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+    )
+}
 
 export default Footer;

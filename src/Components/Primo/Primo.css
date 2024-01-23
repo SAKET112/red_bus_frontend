@@ -1,0 +1,108 @@
+.primo-img {
+    position: absolute;
+    top: 280%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 0;
+}
+
+.primo-subContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.primo-card {
+    background-image: linear-gradient(134.6deg, rgba(201, 37, 107, 1) 15.4%, rgba(116, 16, 124, 1) 74.7%);
+    border-radius: 25px;
+    padding: 24px;
+    max-width: 352px; /* Adjusted to max-width instead of width */
+    width: 100%; /* Take full width if smaller than max-width */
+    height: 157px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.primo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.primo-content h4 {
+    font-size: 22px;
+    color: #fff;
+}
+
+.primo-content p {
+    font-size: 13px;
+    color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+    .primo-img{
+        top: 250%;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .primo-img{
+        top: 230%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .primo-img{
+        top: 220%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .primo-img{
+        top: 250%;
+    }
+
+    .primo-subContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .primo-card {
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .primo-img {
+        text-align: center;
+        top: 230%;
+    }
+
+    .primo-subContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 474px) {
+    .primo-img{
+        top: 260%;
+    }
+
+    .primo-subContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 50px;
+    }
+}
+
+

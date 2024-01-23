@@ -1,0 +1,145 @@
+.rental-container {
+    padding: 0 180px; /* Adjusted padding values */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+}
+
+.rental-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
+}
+
+.rental-text-content h2 {
+    font-size: 40px;
+    color: var(--rentalText-color);
+    font-weight: 300;
+}
+
+.rental-text-content h2 span {
+    font-weight: bolder;
+}
+
+.rental-switch {
+    display: flex;
+    gap: 30px;
+}
+
+.Cab-rental {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 14px 16px;
+    gap: 10px;
+    border-bottom: 2px solid #c2c0c0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Cab-rental h5 {
+    color: #000;
+}
+
+.Cab-rental:hover {
+    background-color: var(--hover-color);
+    color: #d84e55;
+    border-bottom: 2px solid #d84e55;
+}
+
+.rental-text-content p {
+    font-size: 16px;
+    margin: 0 0 24px;
+    color: #000;
+}
+
+.rental-types {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rentals {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rentals .rental-txt {
+    color: #000;
+}
+
+.rentals img {
+    width: 80px;
+    height: 40px;
+}
+
+.rental-types button {
+    margin: 10px 0 0;
+    padding: 15px 16px;
+    border: none;
+    outline: none;
+    background-color: #d84e55;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rental-types button:hover {
+    background-color: #be4248;
+}
+
+.rental-image {
+    background: url("https://s3.rdbuz.com/web/images/homeV2/AboutUs/rydePop.svg");
+    background-size: cover; /* Adjusted background size */
+    background-repeat: no-repeat;
+    margin-top: 100px;
+    flex: 1;
+}
+
+
+@media (max-width: 1259px) {
+    .rental-image {
+        display: none;
+    }
+
+    .rental-container {
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rental-text-content {
+        align-items: center;
+    }
+
+    .rental-container {
+        gap: 30px;
+        padding: 0 20px;
+         /* Adjusted padding values */
+    }
+
+    .rental-image {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .rental-text-content {
+        text-align: center;
+    }
+
+    .rental-container {
+        flex-direction: column;
+    }
+
+    .rental-image {
+        margin-top: 30px;
+    }
+}

@@ -1,7 +1,9 @@
-import "./Enjoy.scss";
+import "./Enjoy.css";
 
 const Enjoy = () => {
   return (
+    <>
+    
     <div className="enjoy-container">
       <div className="enjoy-heading">ENJOY THE APP!</div>
       <div className="enjoy-content">
@@ -42,8 +44,16 @@ const Enjoy = () => {
           </div>
         </div>
       </div>
+      
     </div>
-  );
-};
+    <div className="mediaScreen">
+        <h3>Get the redBus App</h3>
+        <p>Rated <span>4.5⭐</span> on Playstore</p>
+        <p>Download for exciting offers</p>
+        <img src="https://s2.rdbuz.com/web/images/homeV2/appinstall/playStore.svg" alt="" />
+      </div>
+    </>
+  )
+}
 
-export default Enjoy;
+export default Enjoy

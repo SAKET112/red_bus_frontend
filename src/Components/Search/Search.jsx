@@ -1,9 +1,8 @@
-import { useState } from "react";
-import "./Search.scss";
-import DirectionsBusFilledOutlinedIcon from '@mui/icons-material/DirectionsBusFilledOutlined';
+import './search.css';
+import { TbBusStop } from "react-icons/tb";
+import { MdDateRange } from "react-icons/md";
+import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
-
-
 
 const Search = () => {
 
@@ -29,27 +28,38 @@ const Search = () => {
   }
   
   const verifyToken= localStorage.getItem('token')
-  
+
 
   return (
-    <div className="heroSection">
-        {/* <img src="https://st.redbus.in/Images/HomeIndia/HeroImageV2_C.png" alt="" /> */}
-        <h1> No. 1 Online Bus Ticket Booking Site</h1>
-        <div className="input">
-            <label> 
-                <DirectionsBusFilledOutlinedIcon />
-                <input type="text" placeholder="From" value={from} onChange={e => setFrom(e.target.value)} />
-            </label>
-            <label> 
-                <DirectionsBusFilledOutlinedIcon />
-                <input type="text" placeholder="To" value={to} onChange={e => setTo(e.target.value)}/>
-            </label>
-            <label> 
-                <input type="Date" placeholder="Date" />
-            </label>
-            
-            <button onClick={handleSubmit}>SEARCH BUSES</button>
+    <div className="bus-search-container">
+      <div className="background-image">
+        <div className="centered-text">India's No. 1 Online Bus Ticket Booking Site</div>
+        <div className="input-container">
+          <div className="input-group">
+            <TbBusStop className='icon' />
+            <input 
+                type="text" 
+                placeholder="From"
+                value={from}
+                onChange={(e) => setFrom(e.target.value)} 
+            />
+          </div>
+          <div className="input-group">
+            <TbBusStop className='icon' />
+            <input 
+                type="text" 
+                placeholder="To" 
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <MdDateRange className='icon' />
+            <input type="date" />
+          </div>
+          <button type="button" onClick={handleSubmit}>Search Buses</button>
         </div>
+      </div>
     </div>
   )
 }

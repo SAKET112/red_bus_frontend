@@ -1,0 +1,93 @@
+.partnered {
+    position: absolute;
+    top: 440%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.partnered-heading {
+    font-size: 40px;
+    margin: 0px 0px 24px; /* Adjusted margin for smaller screens */
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+.partnered-rtc {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically on smaller screens */
+    gap: 15px; /* Adjusted gap for better spacing */
+}
+
+.partnered-rtc span {
+    font-size: 24px; /* Adjusted font size */
+    color: var(--black-color);
+    font-weight: 300;
+}
+
+.partnered-rtc button {
+    font-size: 14px; /* Adjusted font size */
+    padding: 8px 16px; /* Adjusted padding */
+    color: var(--black-color);
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: var(--buttonBack-color);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.partnered-rtc button:hover {
+    background-color: #8d8989;
+}
+
+.partnered-buses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Adjusted gap for better spacing */
+    margin-top: 20px; /* Adjusted margin for better spacing */
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+}
+
+.bus-type {
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 8px; /* Adjusted padding */
+}
+
+.bus-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adjusted gap for better spacing */
+}
+
+.bus-logo img {
+    height: 64px; /* Adjusted image size */
+    width: 64px; /* Adjusted image size */
+    margin: 0px 0px;
+}
+
+.bus-logo div {
+    font-size: 12px; /* Adjusted font size */
+    color: var(--black-color);
+}
+
+@media (max-width: 768px) {
+    .partnered {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 900px) {
+    .partnered{
+        top: 450%;
+    }
+}
+
+@media (max-width: 600px) {
+    .partnered{
+        top: 530%;
+    }
+}
+

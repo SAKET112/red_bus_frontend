@@ -1,0 +1,104 @@
+/* BusSearchComponent.css */
+
+.bus-search-container {
+    margin-top: 100px; /* Adjust the margin to accommodate your navbar height */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    background: url('https://st.redbus.in/Images/HomeIndia/HeroImageV2_C.png') center/cover no-repeat; /* Set your image URL */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .centered-text {
+        font-size: 32px;
+        font-weight: 800;
+        color: #FFF;
+        margin-bottom: 20px;
+  }
+  
+  .input-container {
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 40px;
+    background-color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .input-group i {
+    margin-right: 10px;
+  }
+  
+  .input-container input {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+  }
+  /* .input-container input {
+    padding: 30px;
+    margin: 5px;
+    width: 200px;
+    font-size: 20px;
+  } */
+
+  .input-container input::placeholder{
+    font-size: 18px;
+  }
+  
+  .input-container button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #D84E55;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .icon{
+    color: #000;
+    font-size: 24px;
+  }
+  
+  .input-container button:hover {
+    background-color: #e43e46;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .input-container input {
+      width: 50%;
+    }
+
+    .bus-search-container{
+        margin-top: 200px;
+    }
+
+    .input-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .centered-text{
+      padding: 10px;
+    }
+  }
+  

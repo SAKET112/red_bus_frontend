@@ -1,27 +1,24 @@
-import "./Login.scss"
-import image from "../../assets/19199008.jpg"
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-
+import { useState } from 'react';
+import './Login.css';
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
-
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
 
+  const navigate = useNavigate();
 
-  //LOGGING IN USER
-  const handleLogin =() => {
+  const handleLogin =(e) => {
+
+    e.preventDefault()
 
     const payload = {
       email,
       pass
     }
 
-    fetch("https://tame-puce-stingray-tam.cyclic.app/api/user/login", {
+    fetch("https://aggressive-worm-coveralls.cyclic.app/api/user/login", {
       method: "POST",
       body: JSON.stringify(payload),
       headers : {
@@ -44,44 +41,38 @@ const Login = () => {
 
   }
 
-  //redirecting to home page
-
+  
 
   return (
-    <div className="loginContainer">
-        <img src={image} alt="background image" />
+    <div className="registration-container">
+      <div className="form-container">
+        <form className="registration-form" onSubmit={handleLogin}>
+          <h2>Login Form</h2>
+          <label htmlFor="name">E-mail:</label>
+          <input
+            type="email"
+            placeholder='Enter E-mail'
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        
-        <div className="login">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            placeholder='Enter a password'
+            id="password"
+            name="password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            required
+          />
 
-          <h1>Login</h1>
-
-            <label htmlFor="email">Email : 
-                <input 
-                  type="email"  
-                  placeholder="Enter your Email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                />
-            </label>
-
-            <label htmlFor="pass">Password :
-              <input 
-                type="password" 
-                placeholder="Enter Password"
-                value={pass}
-                onChange={e => setPass(e.target.value)}
-              />
-            </label>
-
-            <button onClick={handleLogin}>Login</button>
-
-            <div className="register">
-              <span>New User <Link to="/register"> Click here</Link> to register</span>
-            </div>
-
-        </div>
-
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   )
 }

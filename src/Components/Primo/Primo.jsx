@@ -1,4 +1,4 @@
-import "./Primo.scss";
+import './Primo.css';
 
 const Primo = () => {
   return (
@@ -33,7 +33,7 @@ const Primo = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Primo;
+export default Primo

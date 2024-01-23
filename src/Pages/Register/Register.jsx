@@ -1,89 +1,91 @@
-import "./Register.scss"
-import image from "../../assets/19199008.jpg"
-import { useState } from "react"
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import './Register.css';
 
 const Register = () => {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [age, setAge] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
+    const [age, setAge] = useState("");
 
-  const handleRegister = () => {
+    const handleRegister = (e) => {
 
-    const payload = {
-      name,
-      age,
-      email,
-      pass
+      e.preventDefault()
+
+      const payload = {
+        name,
+        email,
+        pass,
+        age
+      }
+
+      console.log(payload);
+
+      fetch("https://aggressive-worm-coveralls.cyclic.app/api/user/register", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-type" : "application/json"
+        }
+      })
+      .then(res => res.json())
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+        
     }
 
-    fetch("https://tame-puce-stingray-tam.cyclic.app/api/user/register", {
-            method: "POST",
-            body : JSON.stringify(payload),
-            headers : {
-                "Content-type" : "application/json",
-            }
-        })
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-  }
-
   return (
-    <div className="registerContainer">
-        <img src={image} alt="background image" />
+    <div className="registration-container">
+      <div className="form-container">
+        <form className="registration-form">
+          <h2>Registration Form</h2>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            placeholder='Enter Your Name'
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-        
-        <div className="register">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            placeholder='Enter Your E-mail'
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-          <h1>Register</h1>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            placeholder='Create a Password'
+            id="password"
+            name="password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            required
+          />
 
-          <label htmlFor="email">Name : 
-                <input 
-                  type="text" 
-                  placeholder="Enter your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-            </label>
+          <label htmlFor="age">Age:</label>
+          <input
+            type="number"
+            placeholder='Enter Your Age'
+            id="age"
+            name="age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            required
+          />
 
-            <label htmlFor="email">Age : 
-                <input 
-                  type="number"  
-                  placeholder="Enter your Age"
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                />
-            </label>
-
-            <label htmlFor="email">Email : 
-                <input 
-                  type="email" 
-                  placeholder="Enter your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-            </label>
-
-            <label htmlFor="pass">Password :
-              <input 
-                type="password"  
-                placeholder="Enter Password"
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-              />
-            </label>
-
-            <button onClick={handleRegister}>Register</button>
-
-            <div className="login">
-              <span>Already a User <Link to="/login"> Click here</Link> to Login</span>
-            </div>
-
-        </div>
-
+          <button onClick={handleRegister}>Register</button>
+        </form>
+      </div>
     </div>
   )
 }

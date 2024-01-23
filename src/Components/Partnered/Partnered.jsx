@@ -1,4 +1,4 @@
-import "./Partnered.scss";
+import "./Partnered.css"
 
 const Partnered = () => {
   return (
@@ -59,7 +59,7 @@ const Partnered = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Partnered;
+export default Partnered
