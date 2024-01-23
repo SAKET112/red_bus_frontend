@@ -54,20 +54,20 @@
 
 @media screen and (max-width: 920px) {
     .primo-img{
-        top: 230%;
+        top: 260%;
     }
 }
 
 @media screen and (max-width: 780px) {
     .primo-img{
-        top: 220%;
+        top: 270%;
     }
 }
 
 @media (max-width: 768px) {
 
     .primo-img{
-        top: 250%;
+        top: 270%;
     }
 
     .primo-subContainer{
@@ -83,7 +83,7 @@
 @media (max-width: 500px) {
     .primo-img {
         text-align: center;
-        top: 230%;
+        top: 250%;
     }
 
     .primo-subContainer {

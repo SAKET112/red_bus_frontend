@@ -1,6 +1,6 @@
 .partnered {
     position: absolute;
-    top: 440%;
+    top: 460%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -74,20 +74,15 @@
 
 @media (max-width: 768px) {
     .partnered {
+        top: 470%;
         left: 50%;
         transform: translateX(-50%);
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 590px) {
     .partnered{
-        top: 450%;
-    }
-}
-
-@media (max-width: 600px) {
-    .partnered{
-        top: 530%;
+        display: none;
     }
 }
 

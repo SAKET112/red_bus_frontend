@@ -1,6 +1,6 @@
 .footer {
     position: absolute;
-    top: 500%;
+    top: 550%;
     width: 100vw;
     padding: 48px;
     background-color: #ddd;
@@ -119,5 +119,17 @@
 @media screen and (max-width: 702px) {
     .footer{
         top: 510%;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+
+    .footer{
+        top: 550%;
+    }
+
+    .footer .middle-footer{
+        display: none;
     }
 }
