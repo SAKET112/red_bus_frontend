@@ -1,6 +1,6 @@
 // BusSeat.js
 import PropTypes from 'prop-types';
-// import './BusSeat.css';
+import './BusSeat.css';
 
 const BusSeat = ({ seatNumber, isSelected, isReserved, onClick }) => {
   const seatClass = isSelected ? 'selected' : isReserved ? 'reserved' : '';
