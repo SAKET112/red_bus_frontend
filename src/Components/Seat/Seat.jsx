@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Seat.css";
-import BusSeat from "../BusSeat/Busseat";
+import BusSeat from "../BusSeat/BusSeat";
 
 const Seat = () => {
 
@@ -62,7 +62,7 @@ const Seat = () => {
           }
         })
         .then(res => res.json())
-        .then(res => localStorage.setItem("message", res.message))
+        .then(res => console.log(res))
         .catch(err => console.log("error",err))
     // Handle submission of data (e.g., send to server)
         
@@ -80,8 +80,6 @@ const Seat = () => {
   const closeSidebar = () => {
     setShowSidebar(false);
   };
-
-  const message = localStorage.getItem("message")
 
 
   const renderSeats = () => {
